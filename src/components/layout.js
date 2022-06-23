@@ -2,6 +2,8 @@ import * as React from "react"
 import { Helmet } from "react-helmet"
 import { Global, css } from "@emotion/react"
 
+import Header from "./header"
+
 const Layout = ({children}) => {
   return (
     <>
@@ -72,8 +74,8 @@ const Layout = ({children}) => {
           rel="stylesheet" /> 
         <title>Bienes Raices Gatsby</title>
       </Helmet>
-      
-      <h1>Mi Sitio en Gatsby</h1>
+
+      <Header />
 
       {children}
 
