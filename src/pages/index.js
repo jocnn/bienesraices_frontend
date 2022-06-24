@@ -2,6 +2,7 @@ import * as React from "react"
 import { css } from "@emotion/react"
 import styled from "@emotion/styled"
 import { GatsbyImage } from "gatsby-plugin-image"
+import * as heroCSS from "../css/hero.module.css"
 
 import useIndex from "../hooks/useIndex"
 
@@ -20,9 +21,17 @@ const Index = () => {
   
   return (
     <Layout>
-      <ImageBackground
-        image={imagen}
-        alt="imagen de página" />
+      <div 
+        className={heroCSS.container}
+      >
+        <h1 
+          className={heroCSS.title}
+        >Venta de casas y departamentos exclusivos</h1>
+        <ImageBackground
+          className={heroCSS.imagen}
+          image={imagen}
+          alt="imagen de página" />
+      </div>
       <main>
         <div css={css`
           max-width: 80rem;
