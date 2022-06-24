@@ -10,8 +10,11 @@ const useIndex = () => {
         contenido
         imagen {
           localFile {
-            childrenImageSharp {
-              gatsbyImageData
+            childImageSharp {
+              gatsbyImageData(
+                transformOptions: {duotone: {highlight: "#222222", shadow: "#192550", opacity: 30}}
+                sizes: "1200px"
+              )
             }
           }
         }
@@ -26,7 +29,7 @@ const useIndex = () => {
     id: inicio.id,
     titulo: inicio.titulo,
     contenido: inicio.contenido,
-    imagen: inicio.imagen.localFile.childrenImageSharp[0].gatsbyImageData
+    imagen: inicio.imagen.localFile.childImageSharp.gatsbyImageData
   }))
   
 }
