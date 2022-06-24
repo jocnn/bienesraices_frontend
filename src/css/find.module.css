@@ -1,0 +1,50 @@
+.container {
+  display: grid;
+  grid-template: "container";
+  place-items: center;
+  place-content: center;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+}
+
+.container > * {
+  grid-area: container;
+  max-width: 150rem;
+}
+
+.container .imagen {
+  width: 100%;
+  object-fit: cover;
+  margin: 0 auto;
+  z-index: -1;
+}
+
+.titles > h3, p {
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #fff;
+  z-index: 1;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.5rem;
+  color: rgb(180, 180, 180);
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 4rem;
+  }
+  .subtitle {
+    font-size: 2rem;
+  }
+}
