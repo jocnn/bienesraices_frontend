@@ -8,7 +8,7 @@ import useIndex from "../hooks/useIndex"
 import Layout from "../components/layout"
 
 const ImageBackground = styled(GatsbyImage)`
-  height: 600px;
+  height: 60rem;
 `
 
 const Index = () => {
@@ -22,8 +22,7 @@ const Index = () => {
     <Layout>
       <ImageBackground
         image={imagen}
-        alt="imagen de página"
-      ></ImageBackground>
+        alt="imagen de página" />
       <main>
         <div css={css`
           max-width: 80rem;
