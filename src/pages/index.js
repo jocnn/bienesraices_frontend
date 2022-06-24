@@ -7,6 +7,7 @@ import * as heroCSS from "../css/hero.module.css"
 import useIndex from "../hooks/useIndex"
 
 import Layout from "../components/layout"
+import Find from "../components/find"
 
 const ImageBackground = styled(GatsbyImage)`
   height: 60rem;
@@ -45,6 +46,9 @@ const Index = () => {
           >{contenido}</p>
         </div>
       </main>
+
+      <Find />
+
     </Layout>
   )
 }
