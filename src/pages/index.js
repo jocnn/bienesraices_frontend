@@ -8,6 +8,7 @@ import useIndex from "../hooks/useIndex"
 
 import Layout from "../components/layout"
 import Find from "../components/find"
+import ListadoPropiedades from "../components/listProperties"
 
 const ImageBackground = styled(GatsbyImage)`
   height: 60rem;
@@ -48,6 +49,8 @@ const Index = () => {
       </main>
 
       <Find />
+
+      <ListadoPropiedades />
 
     </Layout>
   )
