@@ -41,10 +41,11 @@ const useProperties = () => {
       }
     }
   `)
+  // console.log("🚀 ~ file: useProperties.js ~ line 44 ~ useProperties ~ result", result)
 
   return result.allStrapiPropiedad.nodes.map(propiedad => ({
     id: propiedad.id,
-    habitaciones: propiedad.habitacion,
+    habitaciones: propiedad.habitaciones,
     estacionamiento: propiedad.estacionamiento,
     nombre: propiedad.nombre,
     precio: propiedad.precio,
