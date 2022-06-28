@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { css } from "@emotion/react"
+import * as listPropertiesCSS from "../css/listProperties.module.css"
 
 import useProperties from "../hooks/useProperties"
 
@@ -18,22 +19,19 @@ const ListadoPropiedades = () => {
 
   return (
     <>
-      <h1
+      <h2
         css={css`
           margin-top: -5rem;
           margin-bottom: 5rem;
         `}
-      >ListadoPropiedades</h1>
+      >
+        ListadoPropiedades
+      </h2>
 
-      <ul>
-        {
-          propiedades.map(propiedad => (
-            <PropertyPreview
-              key={propiedad.id}
-              propiedad={propiedad}
-            />
-          ))
-        }
+      <ul className={listPropertiesCSS.properties}>
+        {propiedades.map(propiedad => (
+          <PropertyPreview key={propiedad.id} propiedad={propiedad} />
+        ))}
       </ul>
     </>
   )
