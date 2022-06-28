@@ -9,7 +9,7 @@ import PropertyPreview from "./propertyPreview"
 const ListadoPropiedades = () => {
 
   const resultado = useProperties()
-  // console.log("🚀 ~ file: listProperties.js ~ line 11 ~ ListadoPropiedades ~ resultado", resultado)
+  // console.log("🚀 ~ file: listProperties.js ~ line 12 ~ ListadoPropiedades ~ resultado", resultado)
   
   const [ propiedades, setPropiedades ] = useState([])
   
