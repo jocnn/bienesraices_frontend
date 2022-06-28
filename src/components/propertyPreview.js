@@ -1,5 +1,6 @@
 import * as React from "react"
 import styled from "@emotion/styled"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import Iconos from "./iconos"
 
@@ -35,9 +36,14 @@ const PropertyPreview = ({ propiedad }) => {
     precio,
     categoria,
   } = propiedad
+  // console.log("🚀 ~ file: propertyPreview.js ~ line 39 ~ PropertyPreview ~ imagen", imagen)
   
   return (
     <Card>
+      <GatsbyImage
+        image={imagen} 
+        alt="imagen propiedad"
+      />
       <Contenido>
         <h3>{nombre}</h3>
         <p className="precio">{precio}</p>
