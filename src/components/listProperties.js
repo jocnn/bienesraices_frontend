@@ -23,7 +23,7 @@ const ListadoPropiedades = () => {
     <>
       <h2
         css={css`
-          margin-top: -5rem;
+          margin-top: 5rem;
           margin-bottom: 5rem;
         `}
       >
