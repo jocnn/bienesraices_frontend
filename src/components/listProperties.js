@@ -6,15 +6,17 @@ import useProperties from "../hooks/useProperties"
 
 import PropertyPreview from "./propertyPreview"
 
+let res = null
+
 const ListadoPropiedades = () => {
 
-  const resultado = useProperties()
+  res = useProperties()
   // console.log("🚀 ~ file: listProperties.js ~ line 12 ~ ListadoPropiedades ~ resultado", resultado)
   
   const [ propiedades, setPropiedades ] = useState([])
   
   useEffect(() => {
-    setPropiedades(resultado)
+    setPropiedades(res)
   }, [])
 
   return (
