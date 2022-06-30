@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import styled from "@emotion/styled";
 
@@ -20,6 +20,8 @@ const Select = styled.select`
 
 const useFilter = () => {
 
+  const [ categoria, setCategoria ] = useState('')
+
   const result = useStaticQuery(graphql`
     query {
       allStrapiCategoria {
@@ -30,20 +32,23 @@ const useFilter = () => {
       }
     }
   `)
-  // console.log("🚀 ~ file: useFilter.js ~ line 16 ~ useFilter ~ result", result)
+  // console.log("🚀 ~ file: useFilter.js ~ line 35 ~ useFilter ~ result", result)
   
   const categorias = result.allStrapiCategoria.nodes
-  // console.log("🚀 ~ file: useFilter.js ~ line 19 ~ useFilter ~ categorias", categorias)
+  // console.log("🚀 ~ file: useFilter.js ~ line 38 ~ useFilter ~ categorias", categorias)
 
   const FilterUI = () => (
     <Formulario>
-      <Select>
-        <option>-- Filtrar --</option>
+      <Select
+        onChange={e => setCategoria(e.target.value)}
+        value={categoria}
+      >
+        <option value="">-- Filtrar --</option>
         {
           categorias.map(opcion => (
             <option
               key={opcion.id}
-              option={opcion.nombre}
+              value={opcion.nombre}
             >{opcion.nombre}</option>
           ))
         }
@@ -52,6 +57,7 @@ const useFilter = () => {
   )
   
   return {
+    categoria,
     FilterUI
   }
 }
