@@ -12,15 +12,25 @@ let res = null
 const ListadoPropiedades = () => {
 
   res = useProperties()
-  // console.log("🚀 ~ file: listProperties.js ~ line 12 ~ ListadoPropiedades ~ resultado", resultado)
+  // console.log("🚀 ~ file: listProperties.js ~ line 15 ~ ListadoPropiedades ~ resultado", res)
   
-  const { FilterUI } = useFilter()
-
-  const [ propiedades, setPropiedades ] = useState([])
+  const [ propiedades ] = useState(res)
+  const [ filtradas, setFiltradas ] = useState([])
+  
+  const { categoria, FilterUI } = useFilter()
+  // console.log("🚀 ~ file: listProperties.js ~ line 21 ~ ListadoPropiedades ~ categoria", categoria)
   
   useEffect(() => {
-    setPropiedades(res)
-  }, [])
+    if (categoria) {
+      const filtro = propiedades.filter(
+        propiedad => propiedad.categoria === categoria
+      )
+      // console.log("🚀 ~ file: listProperties.js ~ line 28 ~ useEffect ~ filtro", filtro)
+      setFiltradas(filtro)
+    } else {
+      setFiltradas(propiedades)
+    }
+  }, [categoria])
 
   return (
     <>
@@ -33,12 +43,10 @@ const ListadoPropiedades = () => {
         ListadoPropiedades
       </h2>
 
-      {
-        FilterUI()
-      }
+      {FilterUI()}
 
       <ul className={listPropertiesCSS.properties}>
-        {propiedades.map(propiedad => (
+        {filtradas.map(propiedad => (
           <PropertyPreview key={propiedad.id} propiedad={propiedad} />
         ))}
       </ul>
