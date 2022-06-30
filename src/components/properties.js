@@ -1,10 +1,41 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
+import styled from "@emotion/styled"
 
 import Iconos from "./iconos"
 
 import Layout from "./layout"
+
+const Contenido = styled.div`
+  max-width: 120rem;
+  margin: 0 auto;
+  width: 95%;
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 5rem;
+  }
+`
+
+const Aside = styled.aside`
+  .precio {
+    font-size: 2rem;
+    color: #75AB00;
+  }
+  .agente {
+    margin-top: 4rem;
+    border-radius: 1rem;
+    background-color: #75AB00;
+    padding: 3rem;
+    color: #FFF;
+
+    p {
+      margin: 0;
+    }
+  }
+`
 
 export const query = graphql`
   query ($id: String!) {
@@ -46,7 +77,7 @@ const Properties = ({
     allStrapiPropiedad: { nodes },
   },
 }) => {
-  console.log("🚀 ~ file: property.js ~ line 45 ~ Property ~ nodes", nodes[0])
+  // console.log("🚀 ~ file: property.js ~ line 80 ~ Property ~ nodes", nodes[0])
 
   const {
     nombre,
@@ -62,7 +93,7 @@ const Properties = ({
   return (
     <Layout>
       <h1>{nombre}</h1>
-      <div>
+      <Contenido>
         <main>
           <GatsbyImage
             image={imagen.localFile.childImageSharp.gatsbyImageData}
@@ -70,22 +101,22 @@ const Properties = ({
           />
           <p>{descripcion.data.descripcion}</p>
         </main>
-        <aside>
-          <p>${precio}</p>
+        <Aside>
+          <p className="precio">${precio}</p>
           <Iconos
             banhos={banhos}
             estacionamiento={estacionamiento}
             habitaciones={habitaciones}
           />
 
-          <div>
+          <div className="agente">
             <h2>Vendedor: </h2>
             <p>{agente.nombre}</p>
             <p>Telefono: {agente.telefono}</p>
             <p>Email: {agente.email}</p>
           </div>
-        </aside>
-      </div>
+        </Aside>
+      </Contenido>
     </Layout>
   )
 }
