@@ -3,6 +3,7 @@ import { css } from "@emotion/react"
 import * as listPropertiesCSS from "../css/listProperties.module.css"
 
 import useProperties from "../hooks/useProperties"
+import useFilter from "../hooks/useFilter"
 
 import PropertyPreview from "./propertyPreview"
 
@@ -13,6 +14,8 @@ const ListadoPropiedades = () => {
   res = useProperties()
   // console.log("🚀 ~ file: listProperties.js ~ line 12 ~ ListadoPropiedades ~ resultado", resultado)
   
+  const { FilterUI } = useFilter()
+
   const [ propiedades, setPropiedades ] = useState([])
   
   useEffect(() => {
@@ -29,6 +32,10 @@ const ListadoPropiedades = () => {
       >
         ListadoPropiedades
       </h2>
+
+      {
+        FilterUI()
+      }
 
       <ul className={listPropertiesCSS.properties}>
         {propiedades.map(propiedad => (
