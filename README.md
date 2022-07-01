@@ -1,4 +1,4 @@
-# Applicacion Web SSR usando Gatsby, Strapi, Graphql, Emotion, creando paginas dinamicas usando consultas via Graphql, se uso estilos en modulos y en componentes.
+### Applicacion Web SSR usando Gatsby, Strapi, Graphql, Emotion, creando paginas dinamicas usando consultas via Graphql, se uso estilos en modulos y en componentes.
 
 ## Deploy en Netlify 
 ### https://golden-kataifi-f06c70.netlify.app/
