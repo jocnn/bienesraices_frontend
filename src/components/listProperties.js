@@ -8,13 +8,15 @@ import useFilter from "../hooks/useFilter"
 import PropertyPreview from "./propertyPreview"
 
 let res = null
+let propert = null
 
 const ListadoPropiedades = () => {
 
   res = useProperties()
   // console.log("🚀 ~ file: listProperties.js ~ line 15 ~ ListadoPropiedades ~ resultado", res)
   
-  const [ propiedades ] = useState(res)
+  const [propiedades] = useState(res)
+  propert = propiedades
   const [ filtradas, setFiltradas ] = useState([])
   
   const { categoria, FilterUI } = useFilter()
@@ -22,13 +24,13 @@ const ListadoPropiedades = () => {
   
   useEffect(() => {
     if (categoria) {
-      const filtro = propiedades.filter(
+      const filtro = propert.filter(
         propiedad => propiedad.categoria === categoria
       )
       // console.log("🚀 ~ file: listProperties.js ~ line 28 ~ useEffect ~ filtro", filtro)
       setFiltradas(filtro)
     } else {
-      setFiltradas(propiedades)
+      setFiltradas(propert)
     }
   }, [categoria])
 
