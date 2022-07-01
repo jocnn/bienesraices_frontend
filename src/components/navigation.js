@@ -38,11 +38,11 @@ const Navigation = () => {
         activeClassName='pagina-actual'
       >Inicio</NavLink>
       <NavLink
-        to={'/about'}
+        to={'/nosotros'}
         activeClassName='pagina-actual'
       >Nosotros</NavLink>
       <NavLink
-        to={'/properties'}
+        to={'/propiedades'}
         activeClassName='pagina-actual'
       >Propiedades</NavLink>
     </Nav>

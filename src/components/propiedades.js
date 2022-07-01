@@ -72,7 +72,7 @@ export const query = graphql`
   }
 `
 
-const Properties = ({
+const Propiedades = ({
   data: {
     allStrapiPropiedad: { nodes },
   },
@@ -121,4 +121,4 @@ const Properties = ({
   )
 }
 
-export default Properties
+export default Propiedades
